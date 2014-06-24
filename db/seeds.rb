@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+services = [
+  {
+    name: "GitHub",
+    logo_url: "https://avatars.githubusercontent.com/u/9919",
+  },
+  {
+    name: "Heroku",
+    logo_url: "https://avatars.githubusercontent.com/u/23211",
+  },
+]
+
+services.each do |service|
+  Service.create service.merge is_dynamic: true
+end
