@@ -11,11 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623201943) do
+ActiveRecord::Schema.define(version: 20140624211341) do
 
-  create_table "users", force: true do |t|
+  create_table "apps", force: true do |t|
     t.string   "name"
-    t.string   "email"
+    t.integer  "service_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "apps", ["service_id"], name: "index_apps_on_service_id"
+
+  create_table "services", force: true do |t|
+    t.string   "name"
+    t.string   "logo_url"
+    t.boolean  "is_dynamic"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
