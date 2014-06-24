@@ -15,10 +15,12 @@ class AppsController < ApplicationController
   # GET /apps/new
   def new
     @app = App.new
+    @services = Service.all
   end
 
   # GET /apps/1/edit
   def edit
+    @services = Service.all
   end
 
   # POST /apps
