@@ -1,4 +1,6 @@
 DemoApp::Application.routes.draw do
+  resources :identities
+
   resources :apps
 
   resources :services

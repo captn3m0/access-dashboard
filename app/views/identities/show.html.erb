@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @identity.uid %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @identity.service %>
+</p>
+
+<%= link_to 'Edit', edit_identity_path(@identity) %> |
+<%= link_to 'Back', identities_path %>
