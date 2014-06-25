@@ -27,6 +27,7 @@ class AppsController < ApplicationController
   # POST /apps.json
   def create
     @app = App.new(app_params)
+    @services = Service.all
 
     respond_to do |format|
       if @app.save
