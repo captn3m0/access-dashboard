@@ -3,6 +3,7 @@ class CreateIdentities < ActiveRecord::Migration
     create_table :identities do |t|
       t.string :uid
       t.references :service, index: true
+      t.references :user, index: true
 
       t.timestamps
     end

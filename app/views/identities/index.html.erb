@@ -5,6 +5,7 @@
     <tr>
       <th>Uid</th>
       <th>Service</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= identity.uid %></td>
         <td><%= link_to identity.service.name, identity.service %></td>
+        <td><%= link_to identity.user.username, identity.user %></td>
         <td><%= link_to 'Show', identity %></td>
         <td><%= link_to 'Edit', edit_identity_path(identity) %></td>
         <td><%= link_to 'Destroy', identity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
