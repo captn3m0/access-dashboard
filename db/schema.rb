@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624211341) do
+ActiveRecord::Schema.define(version: 20140625225740) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20140624211341) do
   end
 
   add_index "apps", ["service_id"], name: "index_apps_on_service_id"
+
+  create_table "identities", force: true do |t|
+    t.string   "uid"
+    t.integer  "service_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "identities", ["service_id"], name: "index_identities_on_service_id"
 
   create_table "services", force: true do |t|
     t.string   "name"
