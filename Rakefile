@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DemoApp::Application.load_tasks
+Dashboard::Application.load_tasks

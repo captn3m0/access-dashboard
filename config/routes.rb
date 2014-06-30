@@ -1,4 +1,4 @@
-DemoApp::Application.routes.draw do
+Dashboard::Application.routes.draw do
   resources :users
 
   resources :identities
