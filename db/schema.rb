@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627202502) do
+ActiveRecord::Schema.define(version: 20140643151643) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20140627202502) do
   end
 
   add_index "apps", ["service_id"], name: "index_apps_on_service_id"
+
+  create_table "apps_users", id: false, force: true do |t|
+    t.integer "app_id"
+    t.integer "user_id"
+  end
 
   create_table "identities", force: true do |t|
     t.string   "uid"
@@ -44,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140627202502) do
   create_table "users", force: true do |t|
     t.string   "username"
     t.string   "avatar_url"
+    t.string   "heroku_email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

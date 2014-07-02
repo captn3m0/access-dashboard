@@ -19,6 +19,10 @@
     <%= f.label :service_id %><br>
     <%= f.collection_select :service_id, services, :id, :name, prompt: false %>
   </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_ids, User.all, :id, :username, {}, {multiple: true, name: 'app[user_ids][]'} %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
