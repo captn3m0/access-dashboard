@@ -1,7 +1,7 @@
 class AppsController < ApplicationController
   before_action :set_app, only: [:show, :edit, :update, :destroy]
 
-  after_action :update_users, only: [:update, :create]
+  after_action :sync_users, only: [:update, :create]
 
   # GET /apps
   # GET /apps.json
@@ -72,8 +72,8 @@ class AppsController < ApplicationController
       @app = App.find(params[:id])
     end
 
-    def update_users
-      @app.refresh_permissions
+    def sync_users
+      @app.sync_users
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -5,7 +5,7 @@ class App < ActiveRecord::Base
   validates :service, :name, presence: true
   validates :name, uniqueness: { scope: :service, case_sensitive: false }
 
-  def refresh_permissions
+  def sync_users
     client = self.service.client
 
     case self.service.name

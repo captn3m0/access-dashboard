@@ -33,9 +33,9 @@ class Service < ActiveRecord::Base
     end
   end
 
-  def refresh_permissions
+  def sync_apps
     apps.each do |app|
-      app.refresh_permissions
+      app.sync_users
     end
   end
 
