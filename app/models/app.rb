@@ -6,6 +6,8 @@ class App < ActiveRecord::Base
   validates :name, uniqueness: { scope: :service, case_sensitive: false }
 
   def sync_users
+    self.users.clear
+
     client = self.service.client
 
     case self.service.name
