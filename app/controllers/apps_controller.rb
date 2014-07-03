@@ -78,6 +78,6 @@ class AppsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def app_params
-      params.require(:app).permit(:name, :service_id, :user_ids => [])
+      params.require(:app).permit(:name, :service_id)
     end
 end

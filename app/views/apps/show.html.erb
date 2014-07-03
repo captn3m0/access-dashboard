@@ -10,5 +10,14 @@
   <%= @app.service.name %>
 </p>
 
+<p>
+  <strong>Users:</strong>
+  <ul>
+    <% @app.users.each do |user| %>
+      <li><%= link_to user.username, user %></li>
+    <% end %>
+  </ul>
+</p>
+
 <%= link_to 'Edit', edit_app_path(@app) %> |
 <%= link_to 'Back', apps_path %>
